@@ -2,11 +2,14 @@
   "name": "personal-site-ngx",
   "version": "0.0.1",
   "scripts": {
+    "clean": "rimraf ./dist",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build:prod": "ng build --prod",
+    "build:ci": "npm run clean && npm run test:prod && npm run build:prod",
+    "test": "ng test",
+    "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage"
   },
   "private": true,
   "dependencies": {
