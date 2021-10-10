@@ -1,8 +1,6 @@
-name: CI
+name: CI Build
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
 
 jobs:
@@ -28,7 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: build and test
+      - name: Build and test
         run: |
           npm ci
           npm run clean
