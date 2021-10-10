@@ -7,7 +7,6 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --prod",
-    "build:ci": "npm run clean && npm run test:prod && npm run build:prod",
     "test": "ng test",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false --code-coverage"
   },

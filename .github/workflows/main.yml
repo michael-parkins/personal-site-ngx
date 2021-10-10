@@ -31,4 +31,6 @@ jobs:
       - name: build and test
         run: |
           npm ci
-          npm run build:ci
+          npm run clean
+          npm run test:prod
+          npm run build:prod
