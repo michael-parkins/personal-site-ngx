@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ElementRef, ViewChild } from '@angular/core'
 
 @Component({
   selector: 'app-header',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core'
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  @ViewChild('navList') navList!: ElementRef
+
   constructor() {}
+
+  showMenu() {
+    this.navList.nativeElement.classList.toggle('left-0')
+  }
 }
