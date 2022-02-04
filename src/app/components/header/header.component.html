@@ -4,11 +4,19 @@
       #navList
       class="fixed left-full w-full h-full flex flex-col justify-center items-center text-2xl space-y-4 md:ml-4 md:relative md:left-0 md:flex-row md:justify-start md:space-x-4 md:space-y-0 md:my-4"
     >
-      <li class="md:hidden"><button (click)="toggleMenu()">menu</button></li>
+      <li class="md:hidden">
+        <button (click)="toggleMenu()">
+          <img class="text-gray-800 w-10" src="../../../assets/close.svg" alt="close menu" />
+        </button>
+      </li>
       <li><a routerLinkActive="underline app-underline-offset" routerLink="home">Home</a></li>
       <li><a routerLinkActive="underline app-underline-offset" routerLink="about">About</a></li>
       <li><a routerLinkActive="underline app-underline-offset" routerLink="contact">Contact</a></li>
     </ul>
   </nav>
-  <button class="md:hidden" (click)="toggleMenu()">menu</button>
+  <div class="md:hidden flex flex-row-reverse">
+    <button class="m-2" (click)="toggleMenu()">
+      <img class="text-gray-800 w-10" src="../../../assets/menu.svg" alt="open menu" />
+    </button>
+  </div>
 </header>
