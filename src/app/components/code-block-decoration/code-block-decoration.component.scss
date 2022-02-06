@@ -1,7 +1,5 @@
-.typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  animation: writing 4s steps(40, end);
+.write {
+  animation: writing 4s steps(60, end);
 }
 
 @keyframes writing {

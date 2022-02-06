@@ -2,7 +2,3 @@
 [![CI Deploy](https://github.com/michael-parkins/personal-site-ngx/actions/workflows/deploy.yml/badge.svg)](https://github.com/michael-parkins/personal-site-ngx/actions/workflows/deploy.yml)
 
 # PersonalSiteNgx
-
-## Notes
-
-'La Belle Aurore',cursive;
