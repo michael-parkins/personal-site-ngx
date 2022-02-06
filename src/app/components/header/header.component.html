@@ -6,7 +6,15 @@
     >
       <li class="md:hidden">
         <button (click)="toggleMenu()">
-          <img class="text-gray-800 w-10" src="../../../assets/close.svg" alt="close menu" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
       </li>
       <li><a routerLinkActive="underline app-underline-offset" routerLink="home">Home</a></li>
@@ -15,8 +23,10 @@
     </ul>
   </nav>
   <div class="md:hidden flex flex-row-reverse">
-    <button class="m-2" (click)="toggleMenu()">
-      <img class="text-gray-800 w-10" src="../../../assets/menu.svg" alt="open menu" />
+    <button class="m-4 p-2" (click)="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
     </button>
   </div>
 </header>

@@ -1,0 +1,14 @@
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: writing 4s steps(40, end);
+}
+
+@keyframes writing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
