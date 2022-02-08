@@ -10,6 +10,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CodeBlockDecorationComponent } from './components/code-block-decoration/code-block-decoration.component';
+import { TechComponent } from './components/tech/tech.component';
+import { CareerComponent } from './components/career/career.component';
+import { IntroComponent } from './components/intro/intro.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { CodeBlockDecorationComponent } from './components/code-block-decoration
     HomeComponent,
     NotFoundComponent,
     CodeBlockDecorationComponent,
+    TechComponent,
+    CareerComponent,
+    IntroComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [{ provide: Window, useValue: window }],
