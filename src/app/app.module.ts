@@ -13,6 +13,7 @@ import { CodeBlockDecorationComponent } from './components/code-block-decoration
 import { TechComponent } from './components/tech/tech.component';
 import { CareerComponent } from './components/career/career.component';
 import { IntroComponent } from './components/intro/intro.component';
+import { LinkComponent } from './components/link/link.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { IntroComponent } from './components/intro/intro.component';
     TechComponent,
     CareerComponent,
     IntroComponent,
+    LinkComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [{ provide: Window, useValue: window }],
