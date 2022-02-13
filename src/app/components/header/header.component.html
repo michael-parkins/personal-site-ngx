@@ -1,4 +1,4 @@
-<header>
+<header class="sticky top-0">
   <nav>
     <ul
       #navList
@@ -6,7 +6,15 @@
     >
       <li class="md:hidden">
         <button (click)="toggleMenu()" aria-label="close menu">
-          <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg
+            class="h-10 w-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-labelledby="title"
+            role="img"
+          >
+            <title>close icon</title>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -17,8 +25,9 @@
     </ul>
   </nav>
   <div class="md:hidden flex flex-row-reverse">
-    <button class="m-4 p-2" (click)="toggleMenu()" aria-label="open menu">
-      <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <button class="m-4 p-2 dark:bg-zinc-900/90" (click)="toggleMenu()" aria-label="open menu">
+      <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-labelledby="title" role="img">
+        <title>menu icon</title>
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
       </svg>
     </button>
