@@ -1,6 +1,6 @@
 <header class="sticky top-0">
-  <nav #navList class="fixed left-full w-full h-full md:relative md:left-0">
-    <div class="bg-zinc-900/95 m-2 h-full">
+  <nav #nav class="hidden md:block h-full w-full">
+    <div class="bg-zinc-900/95 m-1 h-full">
       <div class="flex justify-end md:hidden">
         <button (click)="toggleMenu()" class="m-4 p-2" aria-label="close menu">
           <svg
@@ -17,11 +17,13 @@
         </button>
       </div>
       <ul
-        class="flex flex-col justify-center items-center text-2xl space-y-4 md:ml-4 md:flex-row md:justify-start md:space-x-4 md:space-y-0 md:my-4"
+        class="h-4/5 flex flex-col justify-center items-center text-2xl space-y-4 md:ml-4 md:flex-row md:justify-start md:space-x-4 md:space-y-0 md:my-4"
       >
-        <li><a routerLinkActive="underline underline-offset-4" routerLink="home">Home</a></li>
-        <li><a routerLinkActive="underline underline-offset-4" routerLink="about">About</a></li>
-        <li><a routerLinkActive="underline underline-offset-4" routerLink="contact">Contact</a></li>
+        <li><a routerLinkActive="underline underline-offset-4" routerLink="home" (click)="closeMenu()">Home</a></li>
+        <li><a routerLinkActive="underline underline-offset-4" routerLink="about" (click)="closeMenu()">About</a></li>
+        <li>
+          <a routerLinkActive="underline underline-offset-4" routerLink="contact" (click)="closeMenu()">Contact</a>
+        </li>
       </ul>
     </div>
   </nav>

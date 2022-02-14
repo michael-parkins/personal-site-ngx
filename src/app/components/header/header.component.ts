@@ -5,11 +5,25 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  @ViewChild('navList') navList!: ElementRef;
+  @ViewChild('nav') navList!: ElementRef;
 
-  constructor() {}
+  constructor(private document: Document) {}
 
   toggleMenu() {
-    this.navList.nativeElement.classList.toggle('left-0');
+    const navElement = this.navList.nativeElement as HTMLElement;
+    navElement.classList.toggle('fixed');
+    navElement.classList.toggle('hidden');
+    this.toggleScolling();
+  }
+
+  closeMenu() {
+    const navElement = this.navList.nativeElement as HTMLElement;
+    if (navElement.classList.contains('fixed')) {
+      this.toggleMenu();
+    }
+  }
+
+  toggleScolling() {
+    this.document.body.classList.toggle('overflow-hidden');
   }
 }

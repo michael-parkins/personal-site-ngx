@@ -31,7 +31,10 @@ import { LinkComponent } from './components/link/link.component';
     LinkComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [{ provide: Window, useValue: window }],
+  providers: [
+    { provide: Window, useValue: window },
+    { provide: Document, useValue: document },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
