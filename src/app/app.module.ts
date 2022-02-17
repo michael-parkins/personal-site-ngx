@@ -14,6 +14,7 @@ import { TechComponent } from './components/tech/tech.component';
 import { CareerComponent } from './components/career/career.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { LinkComponent } from './components/link/link.component';
+import { LoadInComponent } from './components/load-in/load-in.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LinkComponent } from './components/link/link.component';
     CareerComponent,
     IntroComponent,
     LinkComponent,
+    LoadInComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [

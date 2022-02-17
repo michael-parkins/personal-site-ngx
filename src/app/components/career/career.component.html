@@ -2,14 +2,35 @@
   <app-code-block-decoration methodName="highlightWork" returnType="projects: Projects[ ]">
     <div class="mx-6">
       <h2 class="text-3xl text-cyan-400 font-semibold">Things I've built</h2>
-      <div>
-        <h3>oculr-ngx</h3>
-        <p>An Angular library that makes capturing analytics easy.</p>
-      </div>
-      <div>
-        <h3>typescript-component-template</h3>
-        <p>A quick TypeScript component template that includes linting, testing and a pipeline using GitHub actions.</p>
-      </div>
+      <app-load-in>
+        <div class="h-full flex flex-col justify-between">
+          <h3 class="text-xl mb-2">
+            <app-link href="https://github.com/progressive-insurance/oculr-ngx" [external]="true">oculr-ngx</app-link>
+          </h3>
+          <p class="mb-2">An Angular library that makes capturing analytics easy.</p>
+          <ul class="flex gap-2 text-sm">
+            <li>Angular</li>
+            <li>TypeScript</li>
+            <li>Library</li>
+          </ul>
+        </div>
+      </app-load-in>
+      <app-load-in>
+        <div class="h-full flex flex-col justify-between">
+          <h3 class="text-xl mb-2">
+            <app-link href="https://github.com/michael-parkins/typescript-component-template" [external]="true">
+              typescript-component-template
+            </app-link>
+          </h3>
+          <p class="mb-2">
+            A quick TypeScript component template that includes linting, testing and a pipeline using GitHub actions.
+          </p>
+          <ul class="flex gap-2 text-sm">
+            <li>TypeScript</li>
+            <li>Template</li>
+          </ul>
+        </div>
+      </app-load-in>
     </div>
   </app-code-block-decoration>
 </div>
