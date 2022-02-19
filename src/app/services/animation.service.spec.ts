@@ -1,16 +1,37 @@
-import { TestBed } from '@angular/core/testing';
-
+import { ElementRef } from '@angular/core';
+import { createServiceFactory, createSpyObject, SpectatorService } from '@ngneat/spectator';
 import { AnimationService } from './animation.service';
 
-xdescribe('AnimationService', () => {
-  let service: AnimationService;
+describe('AnimationService', () => {
+  let spectator: SpectatorService<AnimationService>;
+  const createService = createServiceFactory(AnimationService);
+  const window = createSpyObject(Window);
+  beforeEach(
+    () =>
+      (spectator = createService({
+        providers: [{ provide: Window, useValue: window }],
+      }))
+  );
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AnimationService);
-  });
+  describe('toggleAnimationClasses()', () => {
+    it('toggle class on an element', () => {
+      const elementRef = new ElementRef<HTMLElement>(document.createElement('div'));
+      spectator.service.toggleAnimationClasses(elementRef, 'one');
+      expect((elementRef.nativeElement as HTMLElement).classList.contains('one')).toBeTrue();
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+    it('toggle multiple classes on an element', () => {
+      const elementRef = new ElementRef<HTMLElement>(document.createElement('div'));
+      spectator.service.toggleAnimationClasses(elementRef, 'one', 'two');
+      expect((elementRef.nativeElement as HTMLElement).classList.contains('one')).toBeTrue();
+      expect((elementRef.nativeElement as HTMLElement).classList.contains('two')).toBeTrue();
+    });
+
+    it('toggle class off an element', () => {
+      const elementRef = new ElementRef<HTMLElement>(document.createElement('div'));
+      elementRef.nativeElement.classList.add('one');
+      spectator.service.toggleAnimationClasses(elementRef, 'one');
+      expect((elementRef.nativeElement as HTMLElement).classList.contains('one')).toBeFalse();
+    });
   });
 });

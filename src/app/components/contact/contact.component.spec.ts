@@ -1,25 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
-  let component: ContactComponent;
-  let fixture: ComponentFixture<ContactComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ContactComponent ]
-    })
-    .compileComponents();
+  let spectator: Spectator<ContactComponent>;
+  const createComponent = createComponentFactory({
+    component: ContactComponent,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
+  beforeEach(() => (spectator = createComponent()));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ContactComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render', () => {
+    expect(spectator.query('h2')?.textContent).toEqual('Get in touch');
   });
 });

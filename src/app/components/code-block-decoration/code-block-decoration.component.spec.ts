@@ -1,25 +1,55 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Spectator, createComponentFactory, createSpyObject, SpyObject } from '@ngneat/spectator';
+import { AnimationService } from 'src/app/services/animation.service';
 import { CodeBlockDecorationComponent } from './code-block-decoration.component';
 
-xdescribe('CodeBlockDecorationComponent', () => {
-  let component: CodeBlockDecorationComponent;
-  let fixture: ComponentFixture<CodeBlockDecorationComponent>;
+describe('CodeBlockDecorationComponent', () => {
+  let spectator: Spectator<CodeBlockDecorationComponent>;
+  const createComponent = createComponentFactory({
+    component: CodeBlockDecorationComponent,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  });
+  let animationService: SpyObject<AnimationService>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [CodeBlockDecorationComponent],
-      providers: [],
-    }).compileComponents();
+  beforeEach(() => (animationService = createSpyObject(AnimationService)));
+
+  it('should check visibility after init', () => {
+    spectator = createComponent({
+      providers: [{ provide: AnimationService, useValue: animationService }],
+    });
+    expect(animationService.checkElementVisibility).toHaveBeenCalled();
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CodeBlockDecorationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should check visibility on scroll', () => {
+    spectator = createComponent({
+      providers: [{ provide: AnimationService, useValue: animationService }],
+    });
+    window.dispatchEvent(new Event('scroll'));
+    expect(animationService.checkElementVisibility).toHaveBeenCalledTimes(2);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should animate if visibile and has not animated before', () => {
+    animationService.checkElementVisibility.andReturn(true);
+    spectator = createComponent({
+      providers: [{ provide: AnimationService, useValue: animationService }],
+    });
+    expect(animationService.toggleAnimationClasses).toHaveBeenCalled();
+  });
+
+  it('should not animate if visibile and has animated before', () => {
+    animationService.checkElementVisibility.andReturn(true);
+    spectator = createComponent({
+      providers: [{ provide: AnimationService, useValue: animationService }],
+    });
+    window.dispatchEvent(new Event('scroll'));
+    expect(animationService.toggleAnimationClasses).toHaveBeenCalledTimes(1);
+  });
+
+  it('should not animate if not visibile', () => {
+    animationService.checkElementVisibility.andReturn(false);
+    spectator = createComponent({
+      providers: [{ provide: AnimationService, useValue: animationService }],
+    });
+    expect(animationService.toggleAnimationClasses).not.toHaveBeenCalled();
   });
 });

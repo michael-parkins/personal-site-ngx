@@ -6,5 +6,4 @@ import { Component, Input } from '@angular/core';
 })
 export class LinkComponent {
   @Input() href = '';
-  @Input() external = false;
 }

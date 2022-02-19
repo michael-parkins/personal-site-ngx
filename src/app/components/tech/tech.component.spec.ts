@@ -1,25 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { TechComponent } from './tech.component';
 
 describe('TechComponent', () => {
-  let component: TechComponent;
-  let fixture: ComponentFixture<TechComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ TechComponent ]
-    })
-    .compileComponents();
+  let spectator: Spectator<TechComponent>;
+  const createComponent = createComponentFactory({
+    component: TechComponent,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
+  beforeEach(() => (spectator = createComponent()));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TechComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render', () => {
+    expect(spectator.query('h2')?.textContent).toEqual('My toolbelt');
   });
 });

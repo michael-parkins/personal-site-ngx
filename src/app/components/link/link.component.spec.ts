@@ -1,25 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { LinkComponent } from './link.component';
 
 describe('LinkComponent', () => {
-  let component: LinkComponent;
-  let fixture: ComponentFixture<LinkComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ LinkComponent ]
-    })
-    .compileComponents();
+  let spectator: Spectator<LinkComponent>;
+  const createComponent = createComponentFactory({
+    component: LinkComponent,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
+  beforeEach(
+    () =>
+      (spectator = createComponent({
+        props: {
+          href: 'some-url',
+        },
+      }))
+  );
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(LinkComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should use input url', () => {
+    expect(spectator.query('a')?.attributes.getNamedItem('href')?.value).toEqual('some-url');
   });
 });

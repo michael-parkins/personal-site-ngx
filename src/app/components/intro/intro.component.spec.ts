@@ -1,25 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { IntroComponent } from './intro.component';
 
 describe('IntroComponent', () => {
-  let component: IntroComponent;
-  let fixture: ComponentFixture<IntroComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ IntroComponent ]
-    })
-    .compileComponents();
+  let spectator: Spectator<IntroComponent>;
+  const createComponent = createComponentFactory({
+    component: IntroComponent,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
+  beforeEach(() => (spectator = createComponent()));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(IntroComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render', () => {
+    expect(spectator.query('h1')?.textContent).toEqual(`Hi, I'm Michael,`);
   });
 });

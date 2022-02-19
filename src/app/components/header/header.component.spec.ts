@@ -1,24 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Spectator, createComponentFactory, createSpyObject } from '@ngneat/spectator';
 import { HeaderComponent } from './header.component';
 
-xdescribe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
-    }).compileComponents();
+describe('HeaderComponent', () => {
+  let spectator: Spectator<HeaderComponent>;
+  const doc = createSpyObject(Document);
+  const createComponent = createComponentFactory({
+    component: HeaderComponent,
+    providers: [{ provide: Document, useValue: doc }],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
+  beforeEach(() => (spectator = createComponent()));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render', () => {
+    expect(spectator.query('header')).toBeTruthy;
   });
 });
