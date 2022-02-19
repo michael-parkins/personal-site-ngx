@@ -13,6 +13,12 @@ module.exports = {
         'screen-3/4': '75vh',
         'screen-9/10': '90vh',
       },
+      transitionDuration: {
+        4000: '4000ms',
+      },
+      transitionTimingFunction: {
+        step: 'steps(60, end)',
+      },
     },
   },
   variants: {

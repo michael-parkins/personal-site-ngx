@@ -1,9 +1,9 @@
 import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
+import { AnimationService } from 'src/app/services/animation.service';
 
 @Component({
   selector: 'app-code-block-decoration',
   templateUrl: './code-block-decoration.component.html',
-  styleUrls: ['./code-block-decoration.component.scss'],
 })
 export class CodeBlockDecorationComponent implements OnInit, AfterViewInit {
   @Input() methodName = '';
@@ -16,31 +16,25 @@ export class CodeBlockDecorationComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
-    const scrollPosition = window.pageYOffset + window.innerHeight;
-
-    if (this.checkVisibility() && !this.animated) {
-      this.addAnimationClass();
-    }
+    this.animate();
   }
 
-  constructor(private window: Window) {}
+  constructor(private animationService: AnimationService) {}
 
   ngOnInit(): void {
     const paramsText = this.params ? this.params.join(', ') : '';
     this.method = `${this.methodName}(${paramsText})${this.returnType ? ': ' + this.returnType : ''} {`;
   }
 
+  // Required when screen is not scrolled and element is already visible
   ngAfterViewInit(): void {
-    if (this.checkVisibility() && !this.animated) {
-      this.addAnimationClass();
+    this.animate();
+  }
+
+  animate(): void {
+    if (this.animationService.checkElementVisibility(this.codeBlockRef) && !this.animated) {
+      this.animated = true;
+      this.animationService.toggleAnimationClasses(this.codeBlockRef, 'w-0', 'w-full');
     }
-  }
-
-  checkVisibility(): boolean {
-    return (this.codeBlockRef.nativeElement as HTMLElement).offsetTop < this.window.scrollY + this.window.innerHeight;
-  }
-
-  addAnimationClass(): void {
-    (this.codeBlockRef.nativeElement as HTMLElement).classList.add('write');
   }
 }
