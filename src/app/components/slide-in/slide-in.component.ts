@@ -1,11 +1,11 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-load-in',
-  templateUrl: './load-in.component.html',
+  selector: 'app-slide-in',
+  templateUrl: './slide-in.component.html',
 })
-export class LoadInComponent {
-  @ViewChild('loadIn') loadInRef!: ElementRef;
+export class SlideInComponent {
+  @ViewChild('slideIn') slideInRef!: ElementRef;
   @ViewChild('wrapper') wrapperRef!: ElementRef;
   animated = false;
 
@@ -26,9 +26,9 @@ export class LoadInComponent {
   }
 
   addAnimationClass(): void {
-    (this.loadInRef.nativeElement as HTMLElement).classList.toggle('-left-full');
-    (this.loadInRef.nativeElement as HTMLElement).classList.toggle('left-0');
-    (this.loadInRef.nativeElement as HTMLElement).classList.toggle('opacity-0');
-    (this.loadInRef.nativeElement as HTMLElement).classList.toggle('opacity-100');
+    (this.slideInRef.nativeElement as HTMLElement).classList.toggle('-left-full');
+    (this.slideInRef.nativeElement as HTMLElement).classList.toggle('left-0');
+    (this.slideInRef.nativeElement as HTMLElement).classList.toggle('opacity-0');
+    (this.slideInRef.nativeElement as HTMLElement).classList.toggle('opacity-100');
   }
 }

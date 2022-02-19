@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoadInComponent } from './load-in.component';
+import { SlideInComponent } from './slide-in.component';
 
 xdescribe('LoadInComponent', () => {
-  let component: LoadInComponent;
-  let fixture: ComponentFixture<LoadInComponent>;
+  let component: SlideInComponent;
+  let fixture: ComponentFixture<SlideInComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoadInComponent],
+      declarations: [SlideInComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadInComponent);
+    fixture = TestBed.createComponent(SlideInComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
