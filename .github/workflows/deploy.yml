@@ -1,8 +1,8 @@
-name: CI Deploy
+name: Deploy
 
 on:
   workflow_run:
-    workflows: ['CI Build']
+    workflows: ['Build']
     types:
       - completed
 
