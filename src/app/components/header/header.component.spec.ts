@@ -13,6 +13,6 @@ describe('HeaderComponent', () => {
   beforeEach(() => (spectator = createComponent()));
 
   it('should render', () => {
-    expect(spectator.query('header')).toBeTruthy;
+    expect(spectator.query('a')?.textContent).toEqual('Home');
   });
 });

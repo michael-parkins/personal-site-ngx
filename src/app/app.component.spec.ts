@@ -1,24 +1,18 @@
-import { TestBed } from '@angular/core/testing'
-import { RouterTestingModule } from '@angular/router/testing'
-import { AppComponent } from './app.component'
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Spectator, createComponentFactory, createSpyObject } from '@ngneat/spectator';
+import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent],
-    }).compileComponents()
-  })
+  let spectator: Spectator<AppComponent>;
+  const doc = createSpyObject(Document);
+  const createComponent = createComponentFactory({
+    component: AppComponent,
+    providers: [{ provide: Document, useValue: doc }],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  });
+  beforeEach(() => (spectator = createComponent()));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    const app = fixture.componentInstance
-    expect(app).toBeTruthy()
-  })
-
-  it(`should have as title 'Michael Parkins | Angular Site'`, () => {
-    const fixture = TestBed.createComponent(AppComponent)
-    const app = fixture.componentInstance
-    expect(app.title).toEqual('Michael Parkins | Angular Site')
-  })
-})
+  it('should set title', () => {
+    expect(spectator.component.title).toEqual('Michael Parkins | Web Developer');
+  });
+});
