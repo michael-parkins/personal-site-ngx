@@ -2,12 +2,12 @@
   [ngClass]="{
     'flex flex-col justify-center': true,
     'mb-28': marginBottom,
-    'v-screen': fullScreen
+    'h-screen-9/10': fullScreen
   }"
 >
   <app-code-block-decoration [methodName]="codeBlock?.methodName || ''" [returnType]="codeBlock?.returnType || ''">
     <div class="mx-6">
-      <h2 class="text-3xl text-cyan-400 font-semibold">{{ header }}</h2>
+      <h2 class="text-3xl font-semibold text-cyan-400">{{ header }}</h2>
       <ng-content></ng-content>
     </div>
   </app-code-block-decoration>
