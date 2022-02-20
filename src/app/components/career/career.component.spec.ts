@@ -11,6 +11,6 @@ describe('CareerComponent', () => {
   beforeEach(() => (spectator = createComponent()));
 
   it('should render', () => {
-    expect(spectator.query('h2')?.textContent).toEqual(`Things I've built`);
+    expect(spectator.query('app-section')).toBeTruthy();
   });
 });

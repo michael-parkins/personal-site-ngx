@@ -12,6 +12,6 @@ describe('AboutComponent', () => {
   beforeEach(() => (spectator = createComponent()));
 
   it('should render', () => {
-    expect(spectator.query('h2')?.textContent).toEqual('About me');
+    expect(spectator.query('app-section')).toBeTruthy();
   });
 });

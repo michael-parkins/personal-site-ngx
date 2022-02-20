@@ -1,6 +1,6 @@
 {
   "name": "personal-site-ngx",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "scripts": {
     "clean": "rimraf ./dist",
     "ng": "ng",

@@ -11,6 +11,6 @@ describe('TechComponent', () => {
   beforeEach(() => (spectator = createComponent()));
 
   it('should render', () => {
-    expect(spectator.query('h2')?.textContent).toEqual('My toolbelt');
+    expect(spectator.query('app-section')).toBeTruthy();
   });
 });

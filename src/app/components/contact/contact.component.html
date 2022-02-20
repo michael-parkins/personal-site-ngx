@@ -1,19 +1,14 @@
-<div class="flex flex-col justify-center">
-  <app-code-block-decoration methodName="reachOut">
-    <div class="mx-6">
-      <h2 class="text-3xl text-cyan-400 font-semibold">Get in touch</h2>
-      <p class="py-5">
-        Have a question, or just want to say hello? Feel free to reach out with an email and I'll do my best to respond
-        as quickly as possible.
-      </p>
-      <div class="flex justify-center">
-        <a
-          class="border-pink-400 text-pink-400 bg-pink-900/10 p-4 border-2 rounded hover:ease-in-out hover:duration-300 dark:hover:bg-pink-900 dark:hover:text-pink-100 dark:hover:border-pink-900"
-          href="mailto:"
-        >
-          Contact me
-        </a>
-      </div>
-    </div>
-  </app-code-block-decoration>
-</div>
+<app-section header="Get in touch" [codeBlock]="{ methodName: 'reachOut' }">
+  <p class="py-5">
+    Have a question, or just want to say hello? Feel free to reach out with an email and I'll do my best to respond as
+    quickly as possible.
+  </p>
+  <div class="flex justify-center">
+    <a
+      class="border-pink-400 text-pink-400 bg-pink-900/10 p-4 border-2 rounded hover:ease-in-out hover:duration-300 dark:hover:bg-pink-900 dark:hover:text-pink-100 dark:hover:border-pink-900"
+      href="mailto:"
+    >
+      Contact me
+    </a>
+  </div>
+</app-section>

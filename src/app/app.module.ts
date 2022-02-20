@@ -15,6 +15,7 @@ import { CareerComponent } from './components/career/career.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { LinkComponent } from './components/link/link.component';
 import { SlideInComponent } from './components/slide-in/slide-in.component';
+import { SectionComponent } from './components/section/section.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { SlideInComponent } from './components/slide-in/slide-in.component';
     IntroComponent,
     LinkComponent,
     SlideInComponent,
+    SectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [

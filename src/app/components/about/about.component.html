@@ -1,25 +1,20 @@
-<div class="flex flex-col justify-center mb-28">
-  <app-code-block-decoration methodName="detailSelf" returnType="string">
-    <div class="mx-6">
-      <h2 class="text-3xl text-cyan-400 font-semibold">About me</h2>
-      <p class="py-5">
-        I'm an open source developer advocate. Currently, I co-lead the Open Source Program Office at
-        <app-link href="https://www.progressive.com/">Progressive</app-link>. Any day I can help make something a bit
-        easier for another developer is a great day.
-      </p>
-      <p class="pb-5">
-        As a developer, my passion is around making great web apps and easy to consume API. Developing web apps is a
-        chance to enjoy the blending of science and art. Being creative while considering usability, accessibility,
-        inclusivity, and simplicity is perfection, like a delicious bowl of hot ramen 🍜.
-      </p>
-      <p>
-        Recently, I had the amazing opportunity to be part of a fireside chat with Stack Overflow. We talked about
-        <app-link
-          href="https://www.linkedin.com/posts/stack-overflow_webinar-recap-making-the-invisible-visible-activity-6894338693784588289-a1jn/"
-          >Making the Invisible, Visible</app-link
-        >, and how we've used Stack Overflow at Progressive to break down silos, uncover SMEs, and collaborate more
-        effectively.
-      </p>
-    </div>
-  </app-code-block-decoration>
-</div>
+<app-section header="About me" [marginBottom]="true" [codeBlock]="{ methodName: 'detailSelf', returnType: 'string' }">
+  <p class="py-5">
+    I'm an open source developer advocate. Currently, I co-lead the Open Source Program Office at
+    <app-link href="https://www.progressive.com/">Progressive</app-link>. Any day I can help make something a bit easier
+    for another developer is a great day.
+  </p>
+  <p class="pb-5">
+    As a developer, my passion is around making great web apps and easy to consume API. Developing web apps is a chance
+    to enjoy the blending of science and art. Being creative while considering usability, accessibility, inclusivity,
+    and simplicity is perfection, like a delicious bowl of hot ramen 🍜.
+  </p>
+  <p>
+    Recently, I had the amazing opportunity to be part of a fireside chat with Stack Overflow. We talked about
+    <app-link
+      href="https://www.linkedin.com/posts/stack-overflow_webinar-recap-making-the-invisible-visible-activity-6894338693784588289-a1jn/"
+      >Making the Invisible, Visible</app-link
+    >, and how we've used Stack Overflow at Progressive to break down silos, uncover SMEs, and collaborate more
+    effectively.
+  </p>
+</app-section>

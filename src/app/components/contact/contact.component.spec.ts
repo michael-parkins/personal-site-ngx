@@ -11,6 +11,6 @@ describe('ContactComponent', () => {
   beforeEach(() => (spectator = createComponent()));
 
   it('should render', () => {
-    expect(spectator.query('h2')?.textContent).toEqual('Get in touch');
+    expect(spectator.query('app-section')).toBeTruthy();
   });
 });
