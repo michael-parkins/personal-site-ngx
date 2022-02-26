@@ -1,11 +1,7 @@
-<div class="flex h-screen-9/10 flex-col justify-center">
-  <app-code-block-decoration methodName="sayHello" returnType="string">
-    <div class="mx-6">
-      <h1 class="text-3xl font-semibold">Hi, I'm <span class="text-cyan-400">Michael</span>,</h1>
-      <p class="ml-6 text-2xl">but everyone calls me d00d.</p>
-      <p class="text-2xl">I'm a web developer,</p>
-      <p class="ml-6 text-2xl">solution architect,</p>
-      <p class="ml-6 text-2xl">and developer advocate.</p>
-    </div>
-  </app-code-block-decoration>
-</div>
+<app-section [fullScreen]="true" [codeBlock]="{ methodName: 'sayHello', returnType: 'string' }">
+  <h1 class="text-3xl font-semibold">Hi, I'm <span class="text-cyan-400">Michael</span>,</h1>
+  <p class="ml-6 text-2xl">but everyone calls me d00d.</p>
+  <p class="text-2xl">I'm a web developer,</p>
+  <p class="ml-6 text-2xl">solution architect,</p>
+  <p class="ml-6 text-2xl">and developer advocate.</p>
+</app-section>

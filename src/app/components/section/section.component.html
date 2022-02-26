@@ -7,7 +7,7 @@
 >
   <app-code-block-decoration [methodName]="codeBlock?.methodName || ''" [returnType]="codeBlock?.returnType || ''">
     <div class="mx-6">
-      <h2 class="text-3xl font-semibold text-cyan-400">{{ header }}</h2>
+      <h2 *ngIf="header" class="text-3xl font-semibold text-cyan-400">{{ header }}</h2>
       <ng-content></ng-content>
     </div>
   </app-code-block-decoration>
