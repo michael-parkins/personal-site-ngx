@@ -19,6 +19,9 @@ module.exports = {
       transitionTimingFunction: {
         step: 'steps(60, end)',
       },
+      spacing: {
+        128: '32rem',
+      },
     },
   },
   variants: {
