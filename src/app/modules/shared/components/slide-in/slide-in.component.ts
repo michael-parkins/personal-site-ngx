@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { AnimationService } from 'src/app/services/animation.service';
+import { AnimationService } from 'src/app/modules/shared/services/animation.service';
 
 @Component({
   selector: 'app-slide-in',

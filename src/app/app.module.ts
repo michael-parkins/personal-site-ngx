@@ -9,13 +9,11 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { CodeBlockDecorationComponent } from './components/code-block-decoration/code-block-decoration.component';
+
 import { TechComponent } from './components/tech/tech.component';
 import { CareerComponent } from './components/career/career.component';
 import { IntroComponent } from './components/intro/intro.component';
-import { LinkComponent } from './components/link/link.component';
-import { SlideInComponent } from './components/slide-in/slide-in.component';
-import { SectionComponent } from './components/section/section.component';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,15 +24,11 @@ import { SectionComponent } from './components/section/section.component';
     ContactComponent,
     HomeComponent,
     NotFoundComponent,
-    CodeBlockDecorationComponent,
     TechComponent,
     CareerComponent,
     IntroComponent,
-    LinkComponent,
-    SlideInComponent,
-    SectionComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [
     { provide: Window, useValue: window },
     { provide: Document, useValue: document },

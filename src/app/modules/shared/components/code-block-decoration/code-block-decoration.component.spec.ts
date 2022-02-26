@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Spectator, createComponentFactory, createSpyObject, SpyObject } from '@ngneat/spectator';
-import { AnimationService } from 'src/app/services/animation.service';
+import { AnimationService } from 'src/app/modules/shared/services/animation.service';
 import { CodeBlockDecorationComponent } from './code-block-decoration.component';
 
 describe('CodeBlockDecorationComponent', () => {
