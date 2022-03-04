@@ -10,7 +10,7 @@ describe('NotFoundComponent', () => {
   });
   beforeEach(() => (spectator = createComponent()));
 
-  it('should render', () => {
-    expect(spectator.query('p')?.textContent).toEqual('not-found works!');
+  it('should exist', () => {
+    expect(spectator.component).toBeDefined();
   });
 });
