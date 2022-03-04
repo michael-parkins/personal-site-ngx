@@ -10,11 +10,10 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
   personalList = [
     'husband',
     'father',
-    'dog lover',
     'gamer',
     'LEGO builder',
     'Star Wars fan',
-    'ramen foodie',
+    'ramen fan',
     'MCU super fan',
     'bushcraft geek',
   ];

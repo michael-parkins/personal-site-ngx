@@ -10,7 +10,7 @@ describe('HomeComponent', () => {
   });
   beforeEach(() => (spectator = createComponent()));
 
-  it('should render', () => {
-    expect(spectator.query('app-intro')).toBeTruthy();
+  it('should exist', () => {
+    expect(spectator.component).toBeDefined();
   });
 });

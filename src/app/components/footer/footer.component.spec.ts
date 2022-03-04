@@ -10,7 +10,7 @@ describe('FooterComponent', () => {
   });
   beforeEach(() => (spectator = createComponent()));
 
-  it('should render', () => {
-    expect(spectator.query('p')?.textContent).toEqual('Designed and built by Michael Parkins.');
+  it('should exist', () => {
+    expect(spectator.component).toBeDefined();
   });
 });

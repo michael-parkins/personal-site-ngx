@@ -10,7 +10,7 @@ describe('CareerComponent', () => {
   });
   beforeEach(() => (spectator = createComponent()));
 
-  it('should render', () => {
-    expect(spectator.query('app-section')).toBeTruthy();
+  it('should exist', () => {
+    expect(spectator.component).toBeDefined();
   });
 });
