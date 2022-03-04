@@ -5,6 +5,7 @@ on:
 
 jobs:
   build:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,10 +27,24 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Build and test
+      - name: Build
         run: |
           npm ci
           npm run clean
           npm run lint
-          npm run test:ci
           npm run build
+
+      - name: Unit test
+        run: npm run test:ci
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
