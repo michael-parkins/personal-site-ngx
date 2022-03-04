@@ -17,7 +17,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Lint
         run: npm run lint
@@ -27,13 +27,44 @@ jobs:
           npm run clean
           npm run build
 
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Unit test
         run: npm run test:ci
+
+  e2e-test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
 
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
+      - name: E2E test
         run: npx playwright test
       - uses: actions/upload-artifact@v2
         if: always()
