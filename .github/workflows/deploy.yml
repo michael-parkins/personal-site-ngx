@@ -7,12 +7,12 @@ on:
       - completed
 
 jobs:
-  deploy:
+  on-success:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
 
@@ -37,3 +37,9 @@ jobs:
       - name: Upload files to S3
         run: |
           aws s3 sync ./dist/personal-site-ngx/ s3://${{ secrets.S3_BUCKET }} --delete
+
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'No deployment due to failed build.'
