@@ -1,11 +1,11 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Spectator, createComponentFactory } from '@ngneat/spectator';
-import { CareerComponent } from './career.component';
+import { ProjectsComponent } from './projects.component';
 
-describe('CareerComponent', () => {
-  let spectator: Spectator<CareerComponent>;
+describe('ProjectsComponent', () => {
+  let spectator: Spectator<ProjectsComponent>;
   const createComponent = createComponentFactory({
-    component: CareerComponent,
+    component: ProjectsComponent,
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
   });
   beforeEach(() => (spectator = createComponent()));

@@ -9,9 +9,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { TechComponent } from './components/tech/tech.component';
-import { CareerComponent } from './components/career/career.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { SharedModule } from './modules/shared/shared.module';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,9 @@ import { SharedModule } from './modules/shared/shared.module';
     AboutComponent,
     ContactComponent,
     HomeComponent,
+    ProjectsComponent,
     NotFoundComponent,
     TechComponent,
-    CareerComponent,
     IntroComponent,
   ],
   imports: [AppRoutingModule, SharedModule],
