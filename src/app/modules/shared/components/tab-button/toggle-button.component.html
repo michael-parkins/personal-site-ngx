@@ -1,0 +1,30 @@
+<button
+  [attr.aria-controls]="controlledElementId"
+  [attr.aria-expanded]="open"
+  class="flex w-full items-center border-2 border-pink-400 border-transparent text-lg font-semibold text-pink-400 focus-visible:border-2 focus-visible:border-dashed focus-visible:border-pink-400 focus-visible:outline-dashed"
+>
+  <svg
+    *ngIf="!open"
+    class="h-5 w-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    aria-labelledby="title"
+    stroke-width="2"
+  >
+    <title>closed chevron icon</title>
+    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+  </svg>
+  <svg
+    *ngIf="open"
+    class="h-5 w-5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    aria-labelledby="title"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+  </svg>
+  <ng-content></ng-content>
+</button>

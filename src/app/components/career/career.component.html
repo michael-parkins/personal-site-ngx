@@ -1,0 +1,52 @@
+<app-section
+  header="Positions I've held"
+  [marginBottom]="true"
+  [codeBlock]="{ methodName: 'getCareer', returnType: 'Positions[ ]' }"
+>
+  <dl class="my-4">
+    <dt>
+      <app-toggle-button [open]="true" [controlledElement]="devAdvocate"
+        >Open Source Developer Advocate</app-toggle-button
+      >
+    </dt>
+    <dd aria-hidden="false" #devAdvocate id="dev-advocate-desc" class="py-4 pl-6 leading-relaxed">
+      <div><app-link href="https://www.progressive.com/">@ Progressive</app-link></div>
+      <p class="font-mono">September 2020 - Present</p>
+      <ul class="ml-4 mt-4 list-disc">
+        <li>Lead the creation and growth of Progressive's Open Source Program Office</li>
+        <li>
+          Empower teams to easily consume and contribute to open source software with self-service processes and guided
+          experiences
+        </li>
+        <li>
+          Write Progressive's first open source project,
+          <app-link href="https://github.com/progressive-insurance/oculr-ngx">oculr-ngx</app-link>
+        </li>
+      </ul>
+    </dd>
+    <dt>
+      <app-toggle-button [open]="false" [controlledElement]="domainArch">Domain Architect</app-toggle-button>
+    </dt>
+    <dd aria-hidden="true" #domainArch id="domain-arch-desc" class="hidden">
+      <div>Progressive</div>
+    </dd>
+    <dt>
+      <app-toggle-button [open]="false" [controlledElement]="solutionArch">Solution Architect</app-toggle-button>
+    </dt>
+    <dd aria-hidden="true" #solutionArch id="solution-arch-desc" class="hidden">
+      <div>Progressive</div>
+    </dd>
+    <dt>
+      <app-toggle-button [open]="false" [controlledElement]="consultantDev">Consultant Developer</app-toggle-button>
+    </dt>
+    <dd aria-hidden="true" #consultantDev id="consultant-dev-desc" class="hidden">
+      <div>Progressive</div>
+    </dd>
+    <dt>
+      <app-toggle-button [open]="false" [controlledElement]="leadDev">Lead Developer</app-toggle-button>
+    </dt>
+    <dd aria-hidden="true" #leadDev id="lead-dev-desc" class="hidden">
+      <div>Progressive</div>
+    </dd>
+  </dl>
+</app-section>

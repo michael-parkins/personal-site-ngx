@@ -12,10 +12,12 @@ import { TechComponent } from './components/tech/tech.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { CareerComponent } from './components/career/career.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CareerComponent,
     HeaderComponent,
     FooterComponent,
     AboutComponent,
