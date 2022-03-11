@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { TechItemDirective } from './directives/tech-item.directive';
 import { ButtonComponent } from './components/button/button.component';
 import { ToggleButtonComponent } from './components/tab-button/toggle-button.component';
+import { SvgComponent } from './components/svg/svg.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ToggleButtonComponent } from './components/tab-button/toggle-button.com
     TechItemDirective,
     ButtonComponent,
     ToggleButtonComponent,
+    SvgComponent,
   ],
   imports: [BrowserModule],
   exports: [
@@ -29,6 +31,7 @@ import { ToggleButtonComponent } from './components/tab-button/toggle-button.com
     BrowserModule,
     TechItemDirective,
     ToggleButtonComponent,
+    SvgComponent,
   ],
 })
 export class SharedModule {}
