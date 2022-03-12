@@ -3,7 +3,7 @@
   [attr.aria-expanded]="open"
   class="flex w-full items-center border-2 border-pink-400 border-transparent text-lg font-semibold text-pink-400 focus-visible:border-2 focus-visible:border-dashed focus-visible:border-pink-400 focus-visible:outline-dashed"
 >
-  <app-svg *ngIf="!open" name="chevron-right" title="closed section icon" classList="h-5 w-5"></app-svg>
-  <app-svg *ngIf="open" name="chevron-down" title="open section icon" classList="h-5 w-5"></app-svg>
+  <app-svg *ngIf="!open" name="chevron-right" title="closed section icon" size="sm"></app-svg>
+  <app-svg *ngIf="open" name="chevron-down" title="open section icon" size="sm"></app-svg>
   <ng-content></ng-content>
 </button>

@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SvgComponent implements OnInit {
   @Input() name = '';
   @Input() title = '';
-  @Input() classList = '';
+  @Input() size: 'sm' | 'md' | 'lg' = 'lg';
   url = '';
 
   constructor() {}
