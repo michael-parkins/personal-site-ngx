@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Social } from 'src/models/social';
+import { Social } from 'src/models/social.interface';
 
 @Component({
   selector: 'app-footer',
