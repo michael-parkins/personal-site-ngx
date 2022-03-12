@@ -3,17 +3,7 @@
     <div class="h-full bg-zinc-900/95">
       <div class="flex justify-end md:hidden">
         <button (click)="toggleMenu()" class="m-4 p-2" aria-label="close menu">
-          <svg
-            class="h-10 w-10"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-labelledby="title"
-            role="img"
-          >
-            <title>close icon</title>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <app-svg name="close" title="close icon"></app-svg>
         </button>
       </div>
       <ul
@@ -29,10 +19,7 @@
   </nav>
   <div class="flex flex-row-reverse md:hidden">
     <button class="m-4 rounded bg-zinc-900/90 p-2" (click)="toggleMenu()" aria-label="open menu">
-      <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-labelledby="title" role="img">
-        <title>menu icon</title>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-      </svg>
+      <app-svg name="menu" title="menu icon"></app-svg>
     </button>
   </div>
 </header>

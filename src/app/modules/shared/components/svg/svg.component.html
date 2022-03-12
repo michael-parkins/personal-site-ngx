@@ -1,4 +1,4 @@
-<svg class="h-12 w-12" fill="currentColor" aria-labelledby="title" role="img">
+<svg [class]="classList ? classList : 'h-12 w-12'" aria-labelledby="title" role="img">
   <title>{{ title }}</title>
   <use [attr.href]="url" />
 </svg>
