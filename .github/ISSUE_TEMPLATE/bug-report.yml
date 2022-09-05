@@ -35,5 +35,5 @@ body:
         - Microsoft Edge
         - Safari
         - Firefox
-      validations:
-        required: true
+    validations:
+      required: true
