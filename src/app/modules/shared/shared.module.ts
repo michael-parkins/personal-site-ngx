@@ -6,7 +6,7 @@ import { SectionComponent } from './components/section/section.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { TechItemDirective } from './directives/tech-item.directive';
 import { ButtonComponent } from './components/button/button.component';
-import { ToggleButtonComponent } from './components/tab-button/toggle-button.component';
+import { ToggleButtonComponent } from './components/toggle-button/toggle-button.component';
 import { SvgComponent } from './components/svg/svg.component';
 
 @NgModule({

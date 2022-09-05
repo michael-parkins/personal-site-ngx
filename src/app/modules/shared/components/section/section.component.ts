@@ -6,7 +6,6 @@ import { CodeBlock } from 'src/models/code-block.interface';
   templateUrl: './section.component.html',
 })
 export class SectionComponent {
-  // TODO: look into using more content projection
   @Input() header = '';
   @Input() codeBlock: CodeBlock | undefined;
   @Input() marginBottom = false;
