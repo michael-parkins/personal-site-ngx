@@ -8,7 +8,6 @@ import { AnimationService } from 'src/app/modules/shared/services/animation.serv
 export class IntroComponent implements AfterViewInit, OnDestroy {
   @ViewChild('personalList') personalListRef!: ElementRef;
   personalList = [
-    'husband',
     'father',
     'gamer',
     'LEGO builder',
@@ -16,7 +15,7 @@ export class IntroComponent implements AfterViewInit, OnDestroy {
     'ramen fan',
     'MCU super fan',
     'bushcraft geek',
-  ];
+  ].sort(() => 0.5 - Math.random());
   intervalId: ReturnType<typeof setInterval> | undefined;
   activeIndex = 0;
 
