@@ -32,7 +32,7 @@
     "@angular-eslint/schematics": "^16.1.2",
     "@angular-eslint/template-parser": "^16.1.2",
     "@angular/cli": "^16.2.1",
-    "@angular/compiler-cli": "^16.2.4",
+    "@angular/compiler-cli": "^16.2.5",
     "@ngneat/spectator": "^14.0.0",
     "@playwright/test": "^1.38.0",
     "@types/jasmine": "^4.3.5",
