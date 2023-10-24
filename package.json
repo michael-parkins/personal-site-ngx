@@ -36,7 +36,7 @@
     "@ngneat/spectator": "^15.0.1",
     "@playwright/test": "^1.39.0",
     "@types/jasmine": "^5.1.1",
-    "@types/node": "^20.8.7",
+    "@types/node": "^20.8.8",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "eslint": "^8.52.0",
