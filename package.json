@@ -33,7 +33,7 @@
     "@angular-eslint/template-parser": "^17.3.0",
     "@angular/cli": "^17.3.1",
     "@angular/compiler-cli": "^17.3.0",
-    "@ngneat/spectator": "^17.1.0",
+    "@ngneat/spectator": "^18.0.1",
     "@playwright/test": "^1.42.1",
     "@types/jasmine": "^5.1.4",
     "@types/node": "^20.11.30",
