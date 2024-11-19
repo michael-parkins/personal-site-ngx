@@ -34,7 +34,7 @@
     "@angular/cli": "^18.2.12",
     "@angular/compiler-cli": "^18.2.12",
     "@ngneat/spectator": "^18.0.2",
-    "@playwright/test": "^1.48.2",
+    "@playwright/test": "^1.49.0",
     "@types/jasmine": "^5.1.4",
     "@types/node": "^22.9.0",
     "@typescript-eslint/eslint-plugin": "^8.14.0",
