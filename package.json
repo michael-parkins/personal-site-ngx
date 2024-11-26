@@ -31,7 +31,7 @@
     "@angular-eslint/eslint-plugin-template": "^18.4.1",
     "@angular-eslint/schematics": "^18.4.2",
     "@angular-eslint/template-parser": "^18.4.2",
-    "@angular/cli": "^19.0.1",
+    "@angular/cli": "^19.0.2",
     "@angular/compiler-cli": "^19.0.0",
     "@ngneat/spectator": "^19.0.0",
     "@playwright/test": "^1.49.0",
