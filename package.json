@@ -30,7 +30,7 @@
     "@angular-eslint/eslint-plugin": "^19.6.0",
     "@angular-eslint/eslint-plugin-template": "^19.4.0",
     "@angular-eslint/schematics": "^19.6.0",
-    "@angular-eslint/template-parser": "^19.6.0",
+    "@angular-eslint/template-parser": "^19.7.0",
     "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
     "@ngneat/spectator": "^19.6.1",
