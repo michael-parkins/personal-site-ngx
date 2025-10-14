@@ -37,7 +37,7 @@
     "@playwright/test": "^1.56.0",
     "@types/jasmine": "^5.1.9",
     "@types/node": "^24.7.2",
-    "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.1",
     "@typescript-eslint/parser": "^8.45.0",
     "eslint": "^9.37.0",
     "jasmine-core": "^5.12.0",
