@@ -39,7 +39,7 @@
     "@types/node": "^26.6.6",
     "@typescript-eslint/eslint-plugin": "^8.72.1",
     "@typescript-eslint/parser": "^8.72.1",
-    "eslint": "^10.13.0",
+    "eslint": "^10.14.0",
     "jasmine-core": "^7.0.2",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "^3.2.0",
